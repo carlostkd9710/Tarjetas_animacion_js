@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    background-color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+nav{
+    background-color:cornsilk;
+}
+.menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.menu .item{
+    display: inline-block;
+}
+.item-derecha {
+    float: right;
+}
+.item a{
+    text-decoration: none;
+    color:black;
+    padding: 20px 45px;
+    display: block;
+}
+
+.item a:hover{
+    background-color: white;
+    color: black;
+}
+/* .panel{
+        background-image: url(https://res.cloudinary.com/dvh5dsa7s/image/upload/v1633655987/spiderman_heo28x.jpg);
+} */
+/* Cards */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0%;
+}
+.container-flex{
+    display: flex;
+    width: 90vh;
+}
+.panel{
+    height: 80vh;
+    background-size: auto 100%;
+    background-position:center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    color: black;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transform: flex 0.7s ease-in;
+    border: 2px dotted white;
+    animation: moverArriba 2s ease-in;
+}
+
+.panel h3{
+    font-size: 18px;
+    position: absolute;
+    bottom: 20px;
+    left: 8px;
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+    background-color: rgba(231, 199, 199,0.5);
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.panel.activ{
+    flex:5px;
+    border: 2px solid whitesmoke;
+}
+.panel.activ h3{
+    opacity: 1;
+}
+
+@keyframes moverArriba{
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media  screen and (max-width: 480px){
+    .container{
+        width: 100vw;
+    }
+    
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+    .panel h3{
+        font-size: 18px;
+    }
+    .panel{
+        flex:0.3;
+    }
+}
